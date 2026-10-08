@@ -1,22 +1,30 @@
-# ENDCODER 🐍
-# Convert normal text into binary
+# ENDCODER - Convert normal text into binary
 
-# Get text from the user
-text = input("Enter your text: ")
+def text_to_binary(text: str) -> str:
+    """Converts text into clean 8-bit binary blocks using format()."""
+    binary_values = []
+    
+    for letter in text:
+        # format(ord(letter), '08b') automatically converts to binary,
+        # removes '0b', and pads it to 8 bits (no slicing or zfill needed!)
+        binary_bits = format(ord(letter), '08b')
+        binary_values.append(binary_bits)
+        
+    return " ".join(binary_values)
 
-# Empty list to store binary values
-binary = []
+def main():
+    # Get text from the user
+    text = input("Enter your text: ").strip()
+    
+    # Validation: Check if the user just pressed Enter without typing anything
+    if not text:
+        print("Error: Please enter some valid text!")
+        return
+        
+    # Get the binary result and print it
+    result = text_to_binary(text)
+    print(f"Binary: {result}")
 
-# Go through each character in the text
-for letter in text:
-    # Convert character into its number (ASCII/Unicode)
-    a = ord(letter)
-
-    # Convert the number into binary
-    b = bin(a)
-
-    # Remove "0b" and make it at least 8 bits
-    binary.append(b[2:].zfill(8))
-
-# Print all binary values separated by spaces
-print("Binary:", " ".join(binary))
+# Standard entry point for professional Python scripts
+if __name__ == "__main__":
+    main()
