@@ -1,26 +1,26 @@
 <div align="center">
 
-# 💱 Live Currency Converter
-### 🌍 Real-Time Exchange Rates for 160+ Countries | ⚡ Built with Python
+# 🔢 Binary Encoder
+### 💻 Convert Plain Text into Clean 8-Bit Binary | ⚡ Built with Pure Python
 
 <p>
-  <b>A fast, zero-config command-line tool that converts money between 160+ countries using live market rates!</b>
+  <b>A fast, lightweight, zero-dependency command-line tool that converts any text into clean, space-separated 8-bit binary blocks!</b>
 </p>
 
 <!-- Static Badges (Never Break — Even on Private Repos!) -->
 <p>
   <img src="https://shields.io" alt="Python 3.8+" />
-  <img src="https://shields.io" alt="160+ Currencies" />
-  <img src="https://shields.io" alt="No API Key Needed" />
+  <img src="https://shields.io" alt="Zero Dependencies" />
+  <img src="https://shields.io" alt="8-Bit ASCII" />
   <img src="https://shields.io" alt="Cross Platform" />
 </p>
 
 <!-- Clickable Quick Navigation -->
 <p>
-  <a href="#-what-does-this-project-do-for-everyone">📌 Overview</a> •
+  <a href="#-what-does-this-project-do">📌 Overview</a> •
   <a href="#-how-it-looks-when-you-run-it">💻 Demo</a> •
-  <a href="#-how-to-run-this-even-if-you-are-non-tech">🚀 Quick Start</a> •
-  <a href="#-20-popular-currency-codes-you-can-use">🌐 Currencies</a> •
+  <a href="#-how-to-run-this">🚀 Quick Start</a> •
+  <a href="#-ascii-to-binary-cheat-sheet">📊 Cheat Sheet</a> •
   <a href="#-how-it-works-behind-the-scenes">⚙️ Architecture</a> •
   <a href="#-project-structure">📁 Structure</a> •
   <a href="#-troubleshooting--faq">🛠️ FAQ</a>
@@ -30,137 +30,107 @@
 
 ---
 
-## 🤔 What Does This Project Do? (For Everyone!)
+## 🤔 What Does This Project Do?
 
-Ever wondered how much **100 USD** is in **Pakistani Rupees (PKR)** or **Indian Rupees (INR)** right now?  
-Instead of searching on Google every single time, this tool connects directly to a live financial server on the internet, grabs today's exact exchange rate, and calculates your converted amount in less than a second!
+Computers don't understand letters like `A`, `B`, or `C`—they only speak in **1s and 0s** (binary).  
+**Binary Encoder** takes any normal text you type and instantly translates each character into its exact **8-bit binary representation** (`0`s and `1`s), cleanly separated by spaces so it's easy to read, copy, or study!
 
 ### ✨ Why Use This?
-- 🌍 **Live Market Rates:** Always fetches fresh, real-time rates from [ExchangeRate-API](https://www.exchangerate-api.com) (no outdated numbers!).
-- 💱 **160+ Currencies Supported:** Works with almost every country in the world.
-- 🔑 **No Sign-Up or API Key Needed:** Works instantly out of the box—no accounts or tokens required.
-- ⚡ **Lightweight & Fast:** Uses only Python and `requests` with zero bloatware.
-- 🧠 **Beginner & User Friendly:** Clean, fast, and super easy to use for both coders and non-tech users.
+- ⚡ **Zero Dependencies:** Uses only Python's built-in standard library—no `pip install` needed!
+- 🧱 **Clean 8-Bit Formatting:** Automatically pads every character to a full 8-bit byte (`01001000` instead of `1001000`).
+- 🛡️ **Built-in Input Validation:** Prevents empty submissions and handles whitespace cleanly.
+- 🧩 **Modular Codebase:** Written with type hints (`text: str -> str`) and a clean `main()` entry point so you can easily import `text_to_binary()` into other projects.
 
 ---
 
 ## 💻 How It Looks When You Run It
 
 ```text
-Convert from  : PKR
-Convert to    : INR
-Enter amount  : 100
-Converted amount: 33.76 INR
+Enter your text: Hi
+Binary: 01001000 01101001
 ```
 
 ```text
-Convert from  : USD
-Convert to    : EUR
-Enter amount  : 100
-Converted amount: 91.07 EUR
+Enter your text: Sufyan
+Binary: 01010011 01110101 01100110 01111001 01100001 01101110
+```
+
+```text
+Enter your text: 
+Error: Please enter some valid text!
 ```
 
 ---
 
-## 🧑‍💻 How to Run This (Even If You Are Non-Tech!)
+## 🚀 How to Run This
 
-You don't need to be a programmer to use this tool. Just follow these **3 simple steps**:
+No third-party packages required! Just make sure **Python 3.8+** is installed on your system:
 
-### Step 1: Install Python *(One-Time Setup)*
-1. Go to [python.org/downloads](https://python.org) and download **Python 3.8 or higher**.
-2. Open the installer and **IMPORTANT:** Check the box that says **"Add Python to PATH"** at the bottom, then click **Install Now**.
-
-### Step 2: Download This Project
-* **Easy Way (No Coding):** Click the green **`<> Code`** button at the top of this page ➔ click **`Download ZIP`** ➔ extract the folder on your PC.
+### Step 1: Clone or Download
+* **Easy Way (No Coding):** Click the green **`<> Code`** button at the top of this page ➔ click **`Download ZIP`** ➔ extract the folder.
 * **Developer Way (Git):**
   ```bash
   git clone https://github.com
-  cd Currency-Converter
+  cd BinaryEncoder
   ```
 
-### Step 3: Run the Converter
-1. Open the extracted folder, click the top address bar, type **`cmd`**, and press **Enter**.
-2. Type these two commands one by one:
-   ```bash
-   pip install requests
-   python main.py
-   ```
-3. Type your currency code (like `PKR`), target currency (like `USD`), and amount—done! 🎉
+### Step 2: Run the Script
+Open your terminal inside the project folder and run:
+```bash
+python main.py
+```
+Type any word, sentence, or symbol and press **Enter**! 🎉
 
 ---
 
-## 🌐 20 Popular Currency Codes You Can Use
+## 📊 ASCII to Binary Cheat Sheet
 
-Type any of these **3-letter codes** when the program asks `Convert from` or `Convert to`:
+Here is how `BinaryEncoder` translates common characters under the hood:
 
-| Country / Region | Currency Code | Country / Region | Currency Code |
-| :--- | :---: | :--- | :---: |
-| 🇵🇰 **Pakistan** | `PKR` | 🇨🇦 **Canada** | `CAD` |
-| 🇮🇳 **India** | `INR` | 🇦🇺 **Australia** | `AUD` |
-| 🇺🇸 **USA** | `USD` | 🇹🇷 **Turkey** | `TRY` |
-| 🇬🇧 **UK** | `GBP` | 🇧🇩 **Bangladesh** | `BDT` |
-| 🇪🇺 **Europe** | `EUR` | 🇱🇰 **Sri Lanka** | `LKR` |
-| 🇦🇪 **UAE** | `AED` | 🇲🇾 **Malaysia** | `MYR` |
-| 🇸🇦 **Saudi Arabia** | `SAR` | 🇸🇬 **Singapore** | `SGD` |
-| 🇯🇵 **Japan** | `JPY` | 🇰🇷 **South Korea** | `KRW` |
-| 🇨🇳 **China** | `CNY` | 🇨🇭 **Switzerland** | `CHF` |
-| 🇿🇦 **South Africa** | `ZAR` | 🇳🇵 **Nepal** | `NPR` |
-
-<details>
-<summary><b>➕ Click to expand more supported currency codes (Gulf, Europe & More)</b></summary>
-<br/>
-
-- 🇶🇦 **Qatar:** `QAR` (Qatari Riyal)
-- 🇴🇲 **Oman:** `OMR` (Omani Rial)
-- 🇰🇼 **Kuwait:** `KWD` (Kuwaiti Dinar)
-- 🇧🇭 **Bahrain:** `BHD` (Bahraini Dinar)
-- 🇷🇺 **Russia:** `RUB` (Russian Ruble)
-- 🇸🇪 **Sweden:** `SEK` (Swedish Krona)
-- 🇳🇴 **Norway:** `NOK` (Norwegian Krone)
-- 🇳🇿 **New Zealand:** `NZD` (New Zealand Dollar)
-
-> 💡 **Note:** Over **140+ additional ISO 4217 currency codes** also work automatically!
-
-</details>
+| Character | Decimal (ASCII) | 8-Bit Binary Output | Character | Decimal (ASCII) | 8-Bit Binary Output |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| `A` | `65` | `01000001` | `a` | `97` | `01100001` |
+| `B` | `66` | `01000010` | `b` | `98` | `01100010` |
+| `C` | `67` | `01000011` | `c` | `99` | `01100011` |
+| `0` | `48` | `00110000` | `1` | `49` | `00110001` |
+| `@` | `64` | `01000000` | `!` | `33` | `00100001` |
+| *(Space)* | `32` | `00100000` | `?` | `63` | `00111111` |
 
 ---
 
 ## ⚙️ How It Works Behind the Scenes
 
 ```text
-┌───────────────────┐      HTTP GET Request       ┌──────────────────────────┐
-│   User Terminal   │ ──────────────────────────► │   ExchangeRate-API       │
-│ (PKR ➔ INR, 100)  │                             │   (v6/latest/PKR)        │
-└───────────────────┘                             └──────────────────────────┘
-         ▲                                                      │
-         │                                                      │ Live JSON Data
-         │                                                      ▼
-┌───────────────────┐     Calculate & Round       ┌──────────────────────────┐
-│  Formatted Output │ ◄────────────────────────── │   Python JSON Parser     │
-│   (33.76 INR)     │       (amount * rate)       │   data["rates"]["INR"]   │
-└───────────────────┘                             └──────────────────────────┘
+┌───────────────────┐     ord(letter)      ┌──────────────────────────┐
+│   Input Text      │ ───────────────────► │   Unicode / ASCII Code   │
+│      ("Hi")       │                      │   'H' = 72, 'i' = 105    │
+└───────────────────┘                      └──────────────────────────┘
+                                                        │
+                                                        │ format(..., '08b')
+                                                        ▼
+┌───────────────────┐    " ".join(...)     ┌──────────────────────────┐
+│  Formatted Output │ ◄─────────────────── │   8-Bit Binary Blocks    │
+│ 01001000 01101001 │                      │ ['01001000', '01101001'] │
+└───────────────────┘                      └──────────────────────────┘
 ```
 
-1. **User Input:** Captures `from_currency`, `to_currency`, and `amount` (automatically converting text to uppercase).
-2. **API Request:** Sends a live HTTP `GET` request to [ExchangeRate-API](https://www.exchangerate-api.com).
-3. **JSON Parsing:** Converts the server response into a Python dictionary and extracts the exact exchange rate.
-4. **Calculation:** Multiplies the entered amount by the live rate and formats the output to 2 decimal places.
+1. **Input & Validation:** Reads user text via `input().strip()` and checks that it isn't empty.
+2. **Character-to-Number (`ord`):** Loops through every character and gets its integer Unicode/ASCII code point.
+3. **8-Bit Formatting (`format`):** Converts the integer into an 8-digit binary string (`'08b'`), automatically stripping the `0b` prefix and padding leading zeros.
+4. **Output Joining:** Joins all 8-bit blocks with spaces (`" ".join()`) for clean readability.
 
 <details>
-<summary><b>🔍 View Sample Live JSON Response</b></summary>
+<summary><b>🧩 Using <code>text_to_binary()</code> in Your Own Python Code</b></summary>
 <br/>
 
-```json
-{
-  "result": "success",
-  "base_code": "USD",
-  "rates": {
-    "USD": 1,
-    "PKR": 278.45,
-    "INR": 84.12,
-    "EUR": 0.91
-  }
-}
+Because `main.py` uses `if __name__ == "__main__":`, you can import the converter function directly into another script:
+
+```python
+from main import text_to_binary
+
+encoded = text_to_binary("Hello")
+print(encoded)
+# Output: 01001000 01100101 01101100 01101100 01101111
 ```
 </details>
 
@@ -169,9 +139,8 @@ Type any of these **3-letter codes** when the program asks `Convert from` or `Co
 ## 📁 Project Structure
 
 ```text
-Currency-Converter/
-├── main.py          # Core CLI currency conversion script
-├── .gitignore       # Ignores Python cache and virtual environment files
+BinaryEncoder/
+├── main.py          # Core text-to-binary encoder script
 └── README.md        # Project documentation
 ```
 
@@ -180,30 +149,30 @@ Currency-Converter/
 ## 🛠️ Troubleshooting & FAQ
 
 <details>
-<summary><b>❓ Error: <code>ModuleNotFoundError: No module named 'requests'</code></b></summary>
+<summary><b>❓ Do I need to install any libraries using <code>pip</code>?</b></summary>
 <br/>
-Your Python environment doesn't have the <code>requests</code> library installed yet. Run <code>pip install requests</code> in your terminal first, then run <code>python main.py</code> again.
+No! This project uses 100% built-in Python functions (<code>ord()</code> and <code>format()</code>), so it works right out of the box.
 </details>
 
 <details>
-<summary><b>❓ Error: <code>KeyError</code> after entering a currency code</b></summary>
+<summary><b>❓ Why does every letter have 8 digits instead of 7?</b></summary>
 <br/>
-Make sure you enter a valid <b>3-letter currency code</b> (such as <code>USD</code>, <code>PKR</code>, or <code>EUR</code>) without extra spaces, and check that you are connected to the internet.
+Standard computing stores data in <b>bytes</b> (8 bits per byte). Padding with leading zeros (e.g., <code>01000001</code> instead of <code>1000001</code>) ensures every character aligns cleanly into a full 1-byte block.
 </details>
 
 <details>
-<summary><b>❓ Do I need to pay or create an account for the API?</b></summary>
+<summary><b>❓ Does it work with numbers, spaces, and symbols?</b></summary>
 <br/>
-No! This project uses the open-access endpoint of ExchangeRate-API, which requires zero sign-ups or API keys.
+Yes! Spaces, punctuation marks (<code>!</code>, <code>@</code>, <code>#</code>), and digits (<code>0-9</code>) all have ASCII/Unicode values and are converted automatically.
 </details>
 
 ---
 
 ## 🔮 Roadmap & Future Improvements
-- [ ] Add `try-except` error handling for invalid currency codes, non-numeric amounts, or offline mode
-- [ ] Add a `while True` loop so users can convert multiple amounts without restarting
-- [ ] Show historical rate comparisons or last-updated timestamp from the API
-- [ ] Build a modern graphical desktop version (GUI) using `CustomTkinter`
+- [ ] Add a **Binary Decoder** mode (`01001000 01101001` ➔ `Hi`)
+- [ ] Add an interactive menu (`[1] Encode Text` / `[2] Decode Binary` / `[3] Exit`)
+- [ ] Add support for encoding/decoding `.txt` files directly
+- [ ] Build a clean desktop GUI using `CustomTkinter`
 
 ---
 
@@ -211,9 +180,9 @@ No! This project uses the open-access endpoint of ExchangeRate-API, which requir
 
 Contributions, issues, and feature requests are welcome!
 1. **Fork** the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b feature/BinaryDecoder`)
+3. Commit your changes (`git commit -m 'Add binary decoder mode'`)
+4. Push to the branch (`git push origin feature/BinaryDecoder`)
 5. Open a **Pull Request**
 
 ---
